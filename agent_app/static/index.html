@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <title>Pratham's AI Agent</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">✦</span><span><strong>Pratham's Agent</strong><small>Autonomous coding partner</small></span></div>
+      <button class="new-chat" id="new-chat" type="button">＋ New conversation</button>
+      <p class="side-label">Workspace</p>
+      <section class="workspace"><span class="workspace-title"><i></i>Active repository</span><code id="repository">Loading workspace…</code></section>
+      <p class="side-label">Available tools</p>
+      <ul class="tool-list"><li>⌕ <span>Search codebase</span></li><li>◫ <span>Read files</span></li><li>⌘ <span>Run commands</span></li><li>☷ <span>Explore files</span></li></ul>
+      <section class="session-card">
+        <span class="session-card-label">Session intelligence</span>
+        <strong>Streaming enabled</strong>
+        <small>Responses and tools update in real time.</small>
+      </section>
+      <p class="local-only"><b>● Local only</b> Your agent is served from this computer.</p>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div class="header-title"><h1>Codebase assistant</h1><p id="model">OpenRouter coding agent</p></div>
+        <div class="header-actions">
+          <span class="response-count" id="response-count">0 responses</span>
+          <button class="scroll-latest" id="scroll-latest" type="button">↓ Latest</button>
+          <span class="connection"><i></i><span id="connection-text">Ready</span></span>
+        </div>
+      </header>
+      <section class="conversation" id="conversation" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <div class="agent-avatar">✦</div><h2>What can I help you build?</h2>
+          <p>I can inspect the repository, trace code paths, run diagnostics, and explain what I find.</p>
+          <div class="suggestions">
+            <button type="button" class="suggestion"><small>Understand the project</small><strong>Give me a concise overview of this codebase.</strong></button>
+            <button type="button" class="suggestion"><small>Find a feature</small><strong>Where is authentication implemented?</strong></button>
+            <button type="button" class="suggestion"><small>Investigate an issue</small><strong>Help me find why this project is failing.</strong></button>
+            <button type="button" class="suggestion"><small>Explore safely</small><strong>List the important files and explain their purpose.</strong></button>
+          </div>
+        </div>
+      </section>
+      <footer class="composer-area">
+        <section class="voice-panel" id="voice-panel" aria-live="polite">
+          <span class="voice-orb" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><strong id="voice-title">Voice assistant</strong><small id="voice-status">Press the mic to speak your request.</small></span>
+          <button class="voice-output" id="voice-output" type="button" aria-pressed="false" title="Enable voice responses">🔈 Voice off</button>
+        </section>
+        <form class="composer" id="composer"><textarea id="prompt" rows="1" placeholder="Ask about your codebase…" autofocus></textarea><div class="composer-actions"><span><kbd>Enter</kbd> send &nbsp; <kbd>Shift + Enter</kbd> new line</span><div class="composer-buttons"><button class="microphone" id="microphone" type="button" aria-label="Speak to the agent" title="Speak to the agent">🎙</button><button id="send" type="submit" aria-label="Send message" disabled>↑</button></div></div></form>
+        <p>Responses stream live. Voice input uses your browser microphone.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
