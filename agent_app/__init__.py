@@ -1,0 +1,1 @@
+"""Local web and terminal interface for the coding agent."""
