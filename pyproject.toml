@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pratham-ai-agent"
+version = "1.0.0"
+description = "A local OpenRouter-powered coding agent with terminal and browser interfaces"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31",
+    "rich>=13.7",
+]
+
+[project.scripts]
+pratham-ai-agent = "agent_app.cli:main"
+
+[tool.setuptools]
+packages = ["agent_app"]
+
+[tool.setuptools.package-data]
+agent_app = ["static/*.html", "static/*.css", "static/*.js"]
+
+[tool.ruff]
+line-length = 100
+
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pyright]
+pythonVersion = "3.9"
+typeCheckingMode = "basic"
